@@ -1,6 +1,7 @@
+#!/usr/bin/env python3
+
 from modules.generator import start_generator
 from modules.database import launch_db
-
 import os
 import time
 

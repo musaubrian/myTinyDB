@@ -45,11 +45,11 @@ class PasswordGenerator():
         print("\n","*"*len(self.upper),"\n")
         self.ask_write = input("Write generated passwords to file?\n~# ")
         if self.ask_write == "y":
-            with open("_passwords.txt", "w") as f:
+            with open("_passwords", "w") as f:
                 for _ in range(self.password_amount):
                     self.generated_password = "".join(random.sample(self.empty_string, self.password_length))
                     f.write(f"{self.generated_password}\n")
-            print("Passwords written to {_passwords.txt}")
+            print("Passwords written to {_passwords}")
             time.sleep(2)
         else:
             print("\n","*"*len(self.upper),"\n")

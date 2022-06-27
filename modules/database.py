@@ -2,7 +2,7 @@ import time
 import os
 from tinydb import Query, TinyDB
 
-with open('./db_loc') as f:
+with open('./db_location') as f:
     location = f.read()
 
 data_base = TinyDB(location)

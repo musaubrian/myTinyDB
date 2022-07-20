@@ -7,7 +7,7 @@ import os
 import subprocess
 from pathlib import Path
 from modules.handle_files import create_dir
-from modules.database import full_path
+from modules.handle_files import to_dir_path
 package_name = "tinydb==4.5.2"
 
 
@@ -15,7 +15,7 @@ def prepare_env(package):
     """
     sets up everything for the user
     """
-    if Path(full_path).is_file():
+    if Path(to_dir_path).is_file():
         raise FileExistsError("Directory already exists")
     else:
         create_dir()

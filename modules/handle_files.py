@@ -3,8 +3,8 @@
 Module creates a directory in the systems home directory,
 """
 import os
-import subprocess
 from pathlib import Path
+
 
 home_path = Path.home()
 dir_name = ".mydb"

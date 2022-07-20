@@ -5,8 +5,9 @@ and installs required packages
 """
 import os
 import subprocess
+from pathlib import Path
 from modules.handle_files import create_dir
-
+from modules.database import full_path
 package_name = "tinydb==4.5.2"
 
 
@@ -14,7 +15,11 @@ def prepare_env(package):
     """
     sets up everything for the user
     """
-    create_dir()
+    if Path(full_path).is_file():
+        raise FileExistsError("Directory already exists")
+    else:
+        create_dir()
+
     subprocess.run(
             ["pip", "install", package]
             if os.name == "nt"

@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 """calls the required modules"""
-from pathlib import Path
 from modules.generator import start_generator
 from modules.database import launch_db
-from modules.handle_files import create_dir
 import os
 import subprocess
 import time
@@ -11,7 +9,7 @@ import time
 
 def clear_console():
     """clears the terminal"""
-    subprocess.run(["cls"] if os.name == "nt" else "clear")
+    subprocess.run(["cls"] if os.name == "nt" else "clear", shell=True)
 
 
 def handle_error():
@@ -30,6 +28,7 @@ def handle_error():
 
 def select_module():
     """Prompts user to select the module they want to use"""
+
     print("""
 ****************************************
 

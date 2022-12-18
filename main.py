@@ -65,9 +65,13 @@ def select_module():
 if __name__ == '__main__':
     """
     run the select_module function
-    if KeyboardInterrupt ctrl+c is caught; encrypt the database
+    if KeyboardInterrupt(ctrl+c) is caught;
+    else just encrypt the database
     """
     try:
         select_module()
     except KeyboardInterrupt:
-        encrypt_file(db_path=full_path, key_path=to_key)
+        print("\nSee ya next time\n")
+        encrypt_file(full_path, to_key)
+    finally:
+        encrypt_file(full_path, to_key)

@@ -68,10 +68,15 @@ class TinyDatabase():
         print("*"*40)
 
         self.search_site = input("Enter sitename: ")
-        self.json_content = self.database.search(
+        self.search_result = self.database.search(
             self.lookup.Site == self.search_site
         )
-        TinyDatabase.pretty_print_json(self.json_content)
+        if len(self.search_result) < 1:
+            print(
+                    f"\nNothing found on [{self.search_site}]",
+                    "\nMaybe check your spelling\n")
+        else:
+            TinyDatabase.pretty_print_json(self.search_result)
         encrypt_file(db_path=full_path, key_path=to_key)
 
     def delete_content(self):
@@ -91,12 +96,12 @@ class TinyDatabase():
         """prints all the contents of the file to stdout"""
         TinyDatabase.pretty_print_json(
             normal_json=self.database.all()
-        )
+         )
         encrypt_file(db_path=full_path, key_path=to_key)
 
     def pretty_print_json(normal_json):
         """
-        returns a prettified json object
+        return a prettified json object
         """
         prettified_json = normal_json
 
@@ -142,7 +147,7 @@ def add_content():
 
 def get_input():
     """
-    prompts user for inputs then calls relevant functions
+    prompt user for inputs then calls relevant functions
     """
     options = ["a", "s", "d", "sh"]
     intro_question = input("~# ")

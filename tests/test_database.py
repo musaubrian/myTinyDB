@@ -11,7 +11,6 @@ class test_database(unittest.TestCase):
         self.assertIsNotNone(path_to_key)
         self.assertIsNotNone(database.location)
         self.assertIsNotNone(database.data_base)
-        
 
     def test_main_loop_function(self):
         pass

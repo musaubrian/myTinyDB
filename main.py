@@ -73,5 +73,3 @@ if __name__ == '__main__':
     except KeyboardInterrupt:
         print("\nSee ya next time\n")
         encrypt_file(full_path, to_key)
-    finally:
-        encrypt_file(full_path, to_key)

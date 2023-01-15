@@ -16,5 +16,6 @@ class TestGeneratePassword(unittest.TestCase):
         self.assertIsNotNone(pyperclip.paste())
         self.assertEqual(len(pyperclip.paste()), 15)
 
+
 if __name__ == '__main__':
     unittest.main()

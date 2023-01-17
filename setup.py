@@ -5,8 +5,8 @@ installs required packages
 """
 
 import subprocess
-from modules.handle_files import create_dir
-from modules.handle_files import generate_key
+from my_tinydb.handle_files import create_dir
+import my_tinydb.handle_files
 
 
 def prepare_env():
@@ -14,7 +14,7 @@ def prepare_env():
     sets up everything for the user
     """
     create_dir()
-    generate_key()
+    my_tinydb.handle_files.generate_key()
     subprocess.check_call(["pip3", "install", "-r", "requirements.txt"])
 
 

@@ -1,3 +1,9 @@
+> **Warning**
+> 
+> No Longer maintaining it, you can check out the Go version [here](https://github.com/musaubrian/tinygo)
+
+
+
 # MyTinyDB 🗃️
 
 > **Simple password generator and database that uses the ***tinyDB*** module**
